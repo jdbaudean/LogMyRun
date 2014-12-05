@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#d6e8ff">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Goals"
+        android:id="@+id/goals_title"
+        android:textSize="28dp"
+        android:textStyle="bold"
+        android:layout_marginTop="36dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/goals_monthly_val"
+        android:textSize="18dp"
+        android:minWidth="80dp"
+        android:background="#8fafd2"
+        android:gravity="center_horizontal"
+        android:layout_alignTop="@+id/goals_monthly"
+        android:layout_alignLeft="@+id/goals_weekly_val" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/goals_weekly_val"
+        android:textSize="18dp"
+        android:minWidth="80dp"
+        android:background="#8fafd2"
+        android:gravity="center_horizontal"
+        android:layout_alignBottom="@+id/goals_weekly"
+        android:layout_toRightOf="@+id/goals_title" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Monthly"
+        android:id="@+id/goals_monthly"
+        android:textSize="20dp"
+        android:layout_marginTop="104dp"
+        android:layout_below="@+id/goals_weekly"
+        android:layout_alignRight="@+id/goals_weekly" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Weekly"
+        android:id="@+id/goals_weekly"
+        android:textSize="20dp"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/goals_title" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="___________________________________________________________"
+        android:id="@+id/goals_separator"
+        android:textColor="#4e4e4e"
+        android:layout_below="@+id/goals_title"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Auto-Generated Goals"
+        android:id="@+id/goals_subtitle_auto"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:layout_marginTop="48dp"
+        android:layout_below="@+id/goals_separator"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:minWidth="20dp"
+    android:background="#d6e8ff">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="History"
+        android:id="@+id/history_title"
+        android:textSize="28dp"
+        android:textStyle="bold"
+        android:layout_marginTop="36dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="___________________________________________________________"
+        android:id="@+id/history_separator"
+        android:textColor="#4e4e4e"
+        android:layout_below="@+id/goals_title"
+        android:layout_centerHorizontal="true" />
+
+    <LinearLayout
+        android:id="@+id/group"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content">
+
+         <TextView android:id="@+id/column_header1"
+            android:layout_width="0dp"
+            android:text="Date"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            />
+        <TextView android:id="@+id/column_header2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            />
+        <TextView android:id="@+id/column_header3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            />
+
+        <Button
+            android:id="@+id/deleteRun"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="@string/delete"
+            android:onClick="onClick"
+            android:layout_gravity="right"
+            android:layout_marginTop="15dp" />
+
+        </LinearLayout>
+
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hello"
+        android:background="#d6e8ff" />
+
+
+
+</LinearLayout>-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:id="@+id/group"
+        android:layout_marginBottom="1dp"
+        android:layout_marginTop="1dp"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+
+        <TextView android:id="@+id/column_header1"
+            android:layout_width="100dp"
+            android:text="Date"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            />
+        <TextView android:id="@+id/column_header2"
+            android:layout_width="60dp"
+            android:text="Distance"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            />
+        <TextView android:id="@+id/column_header3"
+            android:layout_width="80dp"
+            android:text="Time"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            />
+    </LinearLayout>
+
+    <Button android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/deleteRun"
+        android:text="@string/delete"
+        android:onClick="onClick"
+        android:layout_alignParentBottom="true" />
+
+    <ListView android:layout_width="match_parent"
+        android:layout_below="@id/group"
+        android:layout_height="wrap_content"
+        android:id="@android:id/list"
+        android:divider="@null"
+        android:dividerHeight="0px"
+        android:background="#d6e8ff"
+        android:layout_above="@id/deleteRun"
+        />
+
+</RelativeLayout>
