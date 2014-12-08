@@ -124,21 +124,12 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="___________________________________________________________"
-        android:id="@+id/records_separator"
-        android:layout_below="@+id/records_title"
-        android:layout_alignParentRight="true"
-        android:textColor="#4e4e4e" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="Mileage Records"
         android:id="@+id/records_subtitle"
-        android:layout_below="@+id/records_separator"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="24dp"
         android:textSize="14dp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_below="@+id/records_title" />
 
 </RelativeLayout>

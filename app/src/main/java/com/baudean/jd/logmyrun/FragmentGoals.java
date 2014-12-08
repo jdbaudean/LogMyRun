@@ -27,7 +27,7 @@ public class FragmentGoals extends Fragment {
     }
  
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.fragment_goals, null);
 
         TextView textGoalsWeekly = (TextView) root.findViewById(R.id.goals_weekly_val);
