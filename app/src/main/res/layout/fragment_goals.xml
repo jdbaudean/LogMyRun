@@ -73,7 +73,7 @@
     <SeekBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/seekBar"
+        android:id="@+id/seekBarGoals"
         android:layout_below="@+id/goals_monthly"
         android:layout_marginTop="80dp"
         android:layout_alignRight="@+id/goals_monthly_val"
@@ -81,5 +81,16 @@
         android:layout_alignLeft="@+id/goals_monthly"
         android:layout_alignStart="@+id/goals_monthly"
         android:max="20" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/goals_seekBar_text"
+        android:layout_below="@+id/seekBarGoals"
+        android:layout_toRightOf="@+id/goals_weekly"
+        android:layout_marginTop="23dp"
+        android:layout_alignRight="@+id/goals_title"
+        android:layout_alignEnd="@+id/goals_title" />
 
 </RelativeLayout>

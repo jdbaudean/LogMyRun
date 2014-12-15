@@ -15,10 +15,14 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class FragmentGoals extends Fragment {
     private RunsDataSource dataSource;
+    private SeekBar seekBar;
+    private TextView textSeekBar;
 
     public static Fragment newInstance(Context context) {
         FragmentGoals f = new FragmentGoals();
@@ -36,6 +40,34 @@ public class FragmentGoals extends Fragment {
         // Sets the specified text fields to display the data from specific database queries
         textGoalsWeekly.setText(dataSource.getWeeklyGoal());
         textGoalsMonthly.setText(dataSource.getMonthlyGoal());
+
+
+        // Sets text on SeekBar
+        seekBar = (SeekBar) root.findViewById(R.id.seekBarGoals);
+        textSeekBar = (TextView) root.findViewById(R.id.goals_seekBar_text);
+        textSeekBar.setText("Covered: " + seekBar.getProgress() + "/" + seekBar.getMax());
+
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            int progressValue = 0;
+
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                progressValue = progress;
+                Toast.makeText(getActivity(), "Changing seekbar's progress", Toast.LENGTH_SHORT).show();
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+                Toast.makeText(getActivity(), "Started tracking seekbar", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                textSeekBar.setText("Covered: " + progressValue + "/" + seekBar.getMax());
+                Toast.makeText(getActivity(), "Stopped tracking seekbar", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         return root;
     }
