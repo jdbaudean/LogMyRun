@@ -52,20 +52,20 @@ public class FragmentGoals extends Fragment {
 
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                progressValue = progress;
-                Toast.makeText(getActivity(), "Changing seekbar's progress", Toast.LENGTH_SHORT).show();
+                progressValue = (progress * 5);
+                //Toast.makeText(getActivity().getApplicationContext(), "Changing seekbar's progress " + progressValue, Toast.LENGTH_SHORT).show();
+                textSeekBar.setText(progressValue + "%");
 
             }
 
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
-                Toast.makeText(getActivity(), "Started tracking seekbar", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getActivity().getApplicationContext(), "Started tracking seekbar", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                textSeekBar.setText("Covered: " + progressValue + "/" + seekBar.getMax());
-                Toast.makeText(getActivity(), "Stopped tracking seekbar", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getActivity().getApplicationContext(), "Stopped tracking seekbar", Toast.LENGTH_SHORT).show();
             }
         });
 
