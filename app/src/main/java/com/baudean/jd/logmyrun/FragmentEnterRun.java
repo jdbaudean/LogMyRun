@@ -4,8 +4,10 @@
 
 package com.baudean.jd.logmyrun;
 
+
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -38,6 +40,7 @@ public class FragmentEnterRun extends Fragment {
 
         assert root != null;
         Button mButton = (Button) root.findViewById(R.id.enterRun_button_submit);
+        Button dateButton = (Button) root.findViewById(R.id.pick_date_button);
         final EditText editTextRunDistance = (EditText) root.findViewById(R.id.enterRun_distance_val);
         final EditText editTextRunDate = (EditText) root.findViewById(R.id.enterRun_date_val);
         final EditText editTextRunDuration = (EditText) root.findViewById(R.id.enterRun_duration_val);
@@ -45,6 +48,15 @@ public class FragmentEnterRun extends Fragment {
         editTextRunDistance.setText("");
         editTextRunDate.setText("");
         editTextRunDuration.setText("");
+
+        // Listener for dateButton
+
+        dateButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showDatePickerDialog(view);
+            }
+        });
 
         /**
          * Listener for the Submit Run button
@@ -127,6 +139,12 @@ public class FragmentEnterRun extends Fragment {
      */
     public static boolean isDurationValid(String text) {
         return (text != null && text.matches("\\d{2}:\\d{2}:\\d{2}"));
+    }
+
+    public void showDatePickerDialog(View view) {
+        DialogFragment newFragment = new FragmentDatePicker();
+        newFragment.show(getActivity().getSupportFragmentManager(), "datepicker");
+
     }
 
 }
